@@ -28,7 +28,9 @@ A modern, beautiful web application for analyzing the emotional tone of text usi
 
 ## 🚀 Live Demo
 
-**Coming Soon!** Deploy on Render.com to get your live URL
+**[🌐 Visit Live App](https://sentiment-analysis-gemb.onrender.com/)**
+
+Try the sentiment analysis tool now! No installation needed.
 
 ## 📋 Tech Stack
 
