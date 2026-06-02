@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+
+    {% load static %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="icon-header">
+            <i class="fas fa-brain"></i>
+        </div>
+        <h1>Sentiment Analysis</h1>
+        <p>Analyze the emotional tone of your text</p>
+    </div>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="text">
+                <i class="fas fa-pen-fancy"></i> Enter Your Text
+            </label>
+            <textarea
+                id="text"
+                name="text"
+                placeholder="Type or paste your text here to analyze its sentiment..."
+                required>
+            </textarea>
+        </div>
+
+        <button type="submit">
+            <i class="fas fa-magic"></i> Analyze Sentiment
+        </button>
+
+    </form>
+
+    {% if result %}
+
+    <div class="result">
+        <h2>
+            <i class="fas fa-chart-pie"></i> Analysis Result
+        </h2>
+
+        <div class="sentiment-display">
+            <div class="sentiment-emoji">
+                {% if "Positive" in result %}
+                    😊
+                {% elif "Negative" in result %}
+                    😞
+                {% else %}
+                    😐
+                {% endif %}
+            </div>
+
+            <div class="sentiment-badge {% if 'Positive' in result %}positive{% elif 'Negative' in result %}negative{% else %}neutral{% endif %}">
+                {{ result }}
+            </div>
+
+            <div class="sentiment-text {% if 'Positive' in result %}positive{% elif 'Negative' in result %}negative{% else %}neutral{% endif %}">
+                {{ result }}
+            </div>
+        </div>
+
+        <div class="scores">
+            <div class="score-card">
+                <label>Polarity Score</label>
+                <div class="score-value">{{ polarity_score_10|floatformat:1 }}/10</div>
+                <div class="score-bar">
+                    <div class="score-bar-fill" style="width: {{ polarity_width }}%;"></div>
+                </div>
+                <small>Range: 1 to 10</small>
+            </div>
+
+            <div class="score-card">
+                <label>Subjectivity Score</label>
+                <div class="score-value">{{ subjectivity_score_10|floatformat:1 }}/10</div>
+                <div class="score-bar">
+                    <div class="score-bar-fill" style="width: {{ subjectivity_width }}%;"></div>
+                </div>
+                <small>Range: 1 to 10</small>
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
