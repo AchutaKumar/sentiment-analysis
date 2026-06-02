@@ -149,12 +149,6 @@ pip install -r requirements.txt && python manage.py migrate && python manage.py 
 gunicorn sentiment_project.wsgi:application
 ```
 
-### Other Deployment Options
-
-- **Railway.app** - Easy auto-deployment from GitHub
-- **PythonAnywhere** - Simple Django hosting
-- **Heroku** - Popular option with free tier
-- **AWS/Azure** - Enterprise-level hosting
 
 ## 📦 Dependencies
 
@@ -245,33 +239,4 @@ This project is licensed under the MIT License - see LICENSE file for details
 - GitHub: [@AchutaKumar](https://github.com/AchutaKumar)
 - Email: your-email@example.com
 
-## 📞 Support
 
-For issues and questions:
-- Create an Issue on GitHub
-- Check existing documentation
-- Review error messages
-
-## 🚀 Future Enhancements
-
-- [ ] Multi-language support
-- [ ] User authentication
-- [ ] Sentiment history
-- [ ] Advanced analytics
-- [ ] API endpoints
-- [ ] Real-time processing
-- [ ] Dark mode theme
-- [ ] Comparison tool
-
-## 🙏 Acknowledgments
-
-- [Django](https://www.djangoproject.com/) - Web framework
-- [TextBlob](https://textblob.readthedocs.io/) - NLP library
-- [Font Awesome](https://fontawesome.com/) - Icons
-- [Render.com](https://render.com/) - Deployment platform
-
----
-
-**Made with ❤️ for sentiment analysis**
-
-⭐ If you found this project helpful, please consider giving it a star!
