@@ -229,14 +229,10 @@ Contributions are welcome! Feel free to:
 - Suggest features
 - Create pull requests
 
-## 📄 License
-
-This project is licensed under the MIT License - see LICENSE file for details
-
 ## 👤 Author
 
 **Achuta Kumar**
 - GitHub: [@AchutaKumar](https://github.com/AchutaKumar)
-- Email: your-email@example.com
+- Email: achutakumargouda@gmail.com
 
 
